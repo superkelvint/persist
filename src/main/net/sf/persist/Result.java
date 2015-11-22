@@ -9,15 +9,21 @@ import java.util.List;
  */
 public final class Result {
 
-	private final int rowsModified;
-	private final List<String> generatedKeys;
+	public int rowsModified;
+	public List<String> generatedKeys;
+    public int generatedKey = -1;
 
-	public Result(final int rowsModified, final List generatedKeys) {
+	public Result(final int rowsModified, final List<String> generatedKeys) {
 		this.rowsModified = rowsModified;
 		this.generatedKeys = generatedKeys;
 	}
 
-	public int getRowsModified() {
+    public Result(int rowsModified, int generatedKey) {
+        this.rowsModified = rowsModified;
+        this.generatedKey = generatedKey;
+    }
+
+    public int getRowsModified() {
 		return rowsModified;
 	}
 
