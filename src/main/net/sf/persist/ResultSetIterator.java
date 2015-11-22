@@ -9,7 +9,7 @@ import java.util.Iterator;
 /**
  * Iterator backed by a ResultSet.
  */
-public final class ResultSetIterator implements Iterator {
+public final class ResultSetIterator<T> implements Iterator {
 
 	public static final int TYPE_OBJECT = 1;
 	public static final int TYPE_MAP = 2;
@@ -68,4 +68,7 @@ public final class ResultSetIterator implements Iterator {
 		}
 	}
 
+    public Persist getPersist() {
+        return persist;
+    }
 }
